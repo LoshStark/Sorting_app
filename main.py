@@ -1,9 +1,10 @@
 import flet as ft
 
-
 def main(page: ft.Page):
+     page.theme_mode="light"
+     page.theme = ft.Theme(color_scheme_seed="purple")
      page.title ="Sorting App 1.0 - Lorenzo Serbinio - CEDULA"
-     label_app_title = ft.Text(value="Metodos de Ordenamiento", color="white")
+     label_app_title = ft.Text(value="Metodos de Ordenamiento")
      page.controls.append(label_app_title)
      page.update()
 
@@ -33,7 +34,7 @@ def main(page: ft.Page):
     )
      txt_field=ft.TextField(label="Valores")
      txt_field_valores_ordenados=ft.TextField(label="Valores Ordenados", read_only=True)
-     btn_ordenar=ft.ElevatedButton(text="Ordenar")
+     btn_ordenar=ft.ElevatedButton(text="Ordenar", icon="sort",bgcolor="purple",color="white")
      page.add(txt_field,txt_field_valores_ordenados)
      page.add(btn_ordenar)
 
