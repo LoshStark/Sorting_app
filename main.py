@@ -65,10 +65,10 @@ def main(page: ft.Page):
 
     page.controls.append(label_app_title)
     page.update()
+    
+    #definiendo elemento dropdown
 
-    #añadiendo dropdown
-    page.add(
-        ft.Dropdown(
+    dp_selection=  ft.Dropdown(
             label="",
             hint_text="Seleccione el Metodo de Ordenamiento",
             options=[
@@ -82,18 +82,19 @@ def main(page: ft.Page):
                 ft.dropdown.Option("Heap Sort"),
             
             ],
+       
             autofocus=True,
             
 
         )
-   
+    page.update()
+        
 
 
-    )
     txt_field=ft.TextField(label="Valores",on_change=on_text_change)
     txt_field_valores_ordenados=ft.TextField(label="Valores Ordenados", read_only=True)
     btn_ordenar=ft.ElevatedButton(text="Ordenar", icon="sort",bgcolor="purple",color="white")
-    page.add(txt_field,row,txt_field_valores_ordenados)
+    page.add(dp_selection,txt_field,row,txt_field_valores_ordenados)
     page.add(btn_ordenar)
 
 
