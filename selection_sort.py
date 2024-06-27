@@ -1,14 +1,10 @@
-def bubble_sort(arr):
-    n = len(arr)
-    for i in range(n):
-        for j in range(0, n-i-1):
-            if arr[j] > arr[j+1]:
-                # Imprime el valor de arr[j] y arr[j+1] indicando que se intercambian
-                print(arr)
-                print(f"{arr[j]} intercambia con: --> {arr[j+1]}")
-                    
-                #Intercambio de valores en un arreglo
-                arr[j], arr[j+1] = arr[j+1], arr[j]
+def selection_sort(arr):
+    for i in range(len(arr) - 1):
+     indice_menor = i
+    for j in range(i + 1, len(arr)):
+      if arr[j] < arr[indice_menor]:
+        indice_menor = j
+        arr[i], arr[indice_menor] = arr[indice_menor], arr[i]
 
 
 def main(input_string):
@@ -23,7 +19,7 @@ def main(input_string):
             elements[i] = int(elements[i])
     
     # Aplicar bubble sort a la lista
-    bubble_sort(elements)
+    selection_sort(elements)
     
     # Convertir los elementos de vuelta a cadena para la visualización
     sorted_elements = [str(x) for x in elements]

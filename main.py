@@ -1,5 +1,6 @@
 import flet as ft
 import bubble_sort as bs
+import selection_sort as ss
 import os
 
 #Funcion principal donde definimos elemento pagina como parametro
@@ -14,10 +15,19 @@ def main(page: ft.Page):
           if dp_selection.value == "Bubble Sort":
             print("Se ha seleccionado Bubble Sort")
             values=txt_field.value
-          sorted_values = bs.main(values)
-          print(sorted_values)
-          txt_field_valores_ordenados.value = sorted_values
-          page.update()
+            sorted_values = bs.main(values)
+            print(sorted_values)
+            txt_field_valores_ordenados.value = sorted_values
+            page.update()
+        
+          elif dp_selection.value =="Selection Sort":
+              print("Se ha seleccionado Selection Sort")
+              values=txt_field.value
+              sorted_values = ss.main(values)
+              print(sorted_values)
+              txt_field_valores_ordenados.value = sorted_values
+              page.update()
+          
 
     #Evento que escucha el campo de texto principal si tiene un elemento o no
     def on_text_change(e):
@@ -59,10 +69,10 @@ def main(page: ft.Page):
     #evento que escucha valor seleccionado del dropdown
        
 
+    #Seccion de Renderizado - elementos de aplicación
 
-    
-
-    # Crear el botón y asignarlo a una variable
+            
+         # Crear el botón y asignarlo a una variable
     pick_files_button = ft.ElevatedButton(
         "Seleccionar Archivo",
         icon=ft.icons.UPLOAD_FILE,
@@ -80,7 +90,7 @@ def main(page: ft.Page):
         ]
     )
 
-    #Seccion de Renderizado - elementos de aplicación
+
 
     page.theme_mode="light"
     page.theme = ft.Theme(color_scheme_seed="purple") 
