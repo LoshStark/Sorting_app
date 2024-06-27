@@ -10,9 +10,9 @@ def bubble_sort(arr):
                 #Intercambio de valores en un arreglo
                 arr[j], arr[j+1] = arr[j+1], arr[j]
 
-def main():
-    input_string = input("Ingrese números y letras separados por comas: ")
-    
+def main(imput_string):
+    #input_string = input("Ingrese números y letras separados por comas: ")
+    input_string = imput_string
     # Separar la entrada por comas y eliminar espacios en blanco
     elements = [x.strip() for x in input_string.split(',')]
     
@@ -28,7 +28,7 @@ def main():
     sorted_elements = [str(x) for x in elements]
     
     # Mostrar el resultado
-    print("Elementos ordenados: " + ", ".join(sorted_elements))
-
-if __name__ == "__main__":
-    main()
+    #print("Elementos ordenados: " + ", ".join(sorted_elements))
+    elements_sorted = ", ".join(sorted_elements)
+    
+    return elements_sorted
