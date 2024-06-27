@@ -116,7 +116,7 @@ def main(page: ft.Page):
   
     txt_field_valores_ordenados=ft.TextField(label="Valores Ordenados",read_only=True)
     txt_field=ft.TextField(label="Valores",on_change=on_text_change)
-    btn_ordenar=ft.ElevatedButton(text="Ordenar", icon="sort",bgcolor="purple",color="white", on_click=btn_clicked)
+    btn_ordenar=ft.ElevatedButton(text="Ordenar", icon="sort",bgcolor=ft.colors.PURPLE_300,color="white", on_click=btn_clicked)
     page.floating_action_button = ft.FloatingActionButton(icon=ft.icons.REFRESH, bgcolor=ft.colors.PURPLE_300, on_click=reload)
     page.add(dp_selection,txt_field,row,txt_field_valores_ordenados)
     page.add(btn_ordenar)
