@@ -15,7 +15,7 @@ def main(input_string):
     #input_string = input("Ingrese números y letras separados por comas: ")
     input_string = input_string
     # Separar la entrada por comas y eliminar espacios en blanco
-    elements = [x.strip() for x in input_string.split(',')]
+    elements = [x.strip() for x in input_string.split(",")]
     
     # Convertir elementos numéricos a enteros para una comparación correcta
     for i in range(len(elements)):

@@ -9,6 +9,7 @@ def main(page: ft.Page):
     def reload(e):
         os.system("flet kill-server")
         os.system("flet run")
+        os.system("clear")
 
    
     def btn_clicked(e):
@@ -16,7 +17,6 @@ def main(page: ft.Page):
             print("Se ha seleccionado Bubble Sort")
             values=txt_field.value
             sorted_values = bs.main(values)
-            print(sorted_values)
             txt_field_valores_ordenados.value = sorted_values
             page.update()
         
@@ -24,7 +24,6 @@ def main(page: ft.Page):
               print("Se ha seleccionado Selection Sort")
               values=txt_field.value
               sorted_values = ss.main(values)
-              print(sorted_values)
               txt_field_valores_ordenados.value = sorted_values
               page.update()
           

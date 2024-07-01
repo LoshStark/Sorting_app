@@ -1,34 +1,31 @@
-def selection_sort(lista):
- n = len(lista)
- for i in range(n):
-    indice_minimo = i
-    for j in range(i + 1, n):
-      if lista[j] < lista[indice_minimo]:
-        indice_minimo = j
-        print(lista)
-        print(f"{lista[i]} intercambia con: --> {lista[indice_minimo]}")
-    lista[i], lista[indice_minimo] = lista[indice_minimo], lista[i]
+def selection_sort(arr):
+    # Recorremos toda la lista
+    print(arr)
+    for i in range(len(arr)):
+        # Encontramos el índice del elemento más pequeño en la lista no ordenada
+        min_index = i
+        for j in range(i + 1, len(arr)):
+            if arr[j] < arr[min_index]:
+                min_index = j
+        
+        # Intercambiamos el elemento más pequeño con el primer elemento no ordenado
+        arr[i], arr[min_index] = arr[min_index], arr[i]
+        print(f"{arr[min_index]} intercambia con: --> {arr[i]}")
+        print(arr)
+    return arr
 
 
-def main(input_string):
-    #input_string = input("Ingrese números y letras separados por comas: ")
-    input_string = input_string
-    # Separar la entrada por comas y eliminar espacios en blanco
-    elements = [x.strip() for x in input_string.split(',')]
-    
-    # Convertir elementos numéricos a enteros para una comparación correcta
-    for i in range(len(elements)):
-        if elements[i].isdigit():
-            elements[i] = int(elements[i])
-    
-    # Aplicar bubble sort a la lista
-    selection_sort(elements)
-    
-    # Convertir los elementos de vuelta a cadena para la visualización
-    sorted_elements = [str(x) for x in elements]
+def main(elementos_str):
+     #elementos_str = input("Ingrese elementos separados por comas: ")
+     elementos = elementos_str.split(",")
+     for i in range(len(elementos)):
+        if elementos[i].isdigit():
+            elementos[i] = int(elementos[i])
+     res =  selection_sort(elementos)
+     sorted_elements = [str(x) for x in res]
     
     # Mostrar el resultado
-    print("Elementos ordenados: " + ", ".join(sorted_elements))
-    elements_sorted = ",".join(sorted_elements)
-    
-    return elements_sorted
+     print("Elementos ordenados: " + ", ".join(sorted_elements))
+     elements_sorted = ",".join(sorted_elements)
+     #print("Lista de números después del ordenamiento: ",res)
+     return elements_sorted
