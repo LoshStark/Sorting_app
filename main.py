@@ -1,17 +1,21 @@
 import flet as ft
 import bubble_sort as bs
 import selection_sort as ss
+import insertion_sort as insertion
+import shell_sort as shell
+import quick_sort as quick
+import merge_sort as merge
 import os
 
 #Funcion principal donde definimos elemento pagina como parametro
 def main(page: ft.Page):
 
     def reload(e):
+        os.system("clear")
         os.system("flet kill-server")
         os.system("flet run")
-        os.system("clear")
 
-   
+   #funciones del boton ordenar
     def btn_clicked(e):
           if dp_selection.value == "Bubble Sort":
             print("Se ha seleccionado Bubble Sort")
@@ -26,6 +30,33 @@ def main(page: ft.Page):
               sorted_values = ss.main(values)
               txt_field_valores_ordenados.value = sorted_values
               page.update()
+
+          elif dp_selection.value =="Insertion Sort":
+              print ("Se ha seleccionado Insertion Sort")
+              values = txt_field.value
+              sorted_values = insertion.main(values)
+              txt_field_valores_ordenados.value = sorted_values
+              page.update()
+
+          elif dp_selection.value =="Shellsort":
+               print ("Se ha seleccionado Insertion Sort")
+               values = txt_field.value
+               sorted_values = shell.main(values)
+               txt_field_valores_ordenados.value = sorted_values
+               page.update()
+
+          elif dp_selection.value =="Quicksort":
+              values = txt_field.value
+              sorted_values = quick.main(values)
+              txt_field_valores_ordenados.value = sorted_values
+              page.update()
+
+          elif dp_selection.value == "Merge Sort":
+               values = txt_field.value
+               sorted_values = merge.main(values)
+               txt_field_valores_ordenados.value = sorted_values
+               page.update()
+
           
 
     #Evento que escucha el campo de texto principal si tiene un elemento o no
@@ -93,7 +124,7 @@ def main(page: ft.Page):
 
     page.theme_mode="light"
     page.theme = ft.Theme(color_scheme_seed="purple") 
-    page.title ="Sorting App 1.0 - Lorenzo Serbinio - CEDULA"
+    page.title ="Sorting App 1.0 - Lorenzo Serbinio - 8-929-245"
     label_app_title = ft.Text(value="Metodos de Ordenamiento",theme_style=ft.TextThemeStyle.HEADLINE_SMALL)
 
     page.controls.append(label_app_title)
