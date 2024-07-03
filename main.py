@@ -5,6 +5,8 @@ import insertion_sort as insertion
 import shell_sort as shell
 import quick_sort as quick
 import merge_sort as merge
+import radix_sort as radix
+import heap_sort as heap
 import os
 
 #Funcion principal donde definimos elemento pagina como parametro
@@ -18,6 +20,7 @@ def main(page: ft.Page):
    #funciones del boton ordenar
     def btn_clicked(e):
           if dp_selection.value == "Bubble Sort":
+            os.system("clear")
             print("Se ha seleccionado Bubble Sort")
             values=txt_field.value
             sorted_values = bs.main(values)
@@ -54,6 +57,18 @@ def main(page: ft.Page):
           elif dp_selection.value == "Merge Sort":
                values = txt_field.value
                sorted_values = merge.main(values)
+               txt_field_valores_ordenados.value = sorted_values
+               page.update()
+
+          elif dp_selection.value == "Radix Sort":
+               values = txt_field.value
+               sorted_values = radix.main(values)
+               txt_field_valores_ordenados.value = sorted_values
+               page.update()
+
+          elif dp_selection.value == "Heap Sort":
+               values = txt_field.value
+               sorted_values = heap.main(values)
                txt_field_valores_ordenados.value = sorted_values
                page.update()
 
