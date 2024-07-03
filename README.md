@@ -1,4 +1,4 @@
-# A sorting_app Flet app
+# Sorting_App 2.0 - Flet
 Requisitos:
 flet==0.22.*
 python 3.12*
