@@ -8,19 +8,37 @@ import merge_sort as merge
 import radix_sort as radix
 import heap_sort as heap
 import os
+import os
+import platform
+import subprocess
+
+def clear_screen():
+    # Detectar el sistema operativo
+    current_os = platform.system()
+    
+    if current_os == "Windows":
+        # Para Windows
+        subprocess.run("cls", shell=True)
+    else:
+        # Para Unix/Linux/MacOS
+        subprocess.run("clear", shell=True)
 
 #Funcion principal donde definimos elemento pagina como parametro
 def main(page: ft.Page):
 
     def reload(e):
-        os.system("clear")
-        os.system("flet kill-server")
-        os.system("flet run")
+      txt_field_valores_ordenados.value =""
+      txt_field.value =""
+      txt_field.read_only = False
+      selected_files.value =""  
+      dp_selection.value=""
+      clear_screen()
+      print("Se han restablecido todos los campos y se ha limpiado la consola")
+      page.update()
 
    #funciones del boton ordenar
     def btn_clicked(e):
           if dp_selection.value == "Bubble Sort":
-            os.system("clear")
             print("Se ha seleccionado Bubble Sort")
             values=txt_field.value
             sorted_values = bs.main(values)
@@ -139,7 +157,7 @@ def main(page: ft.Page):
 
     page.theme_mode="light"
     page.theme = ft.Theme(color_scheme_seed="purple") 
-    page.title ="Sorting App 1.0 - Lorenzo Serbinio - 8-929-245"
+    page.title ="Sorting App 2.0 - Lorenzo Serbinio - 8-929-245"
     label_app_title = ft.Text(value="Metodos de Ordenamiento",theme_style=ft.TextThemeStyle.HEADLINE_SMALL)
 
     page.controls.append(label_app_title)
@@ -172,9 +190,9 @@ def main(page: ft.Page):
     txt_field_valores_ordenados=ft.TextField(label="Valores Ordenados",read_only=True)
     txt_field=ft.TextField(label="Valores",on_change=on_text_change)
     btn_ordenar=ft.ElevatedButton(text="Ordenar", icon="sort",bgcolor=ft.colors.PURPLE_300,color="white", on_click=btn_clicked)
-    page.floating_action_button = ft.FloatingActionButton(icon=ft.icons.REFRESH, bgcolor=ft.colors.PURPLE_300, on_click=reload)
+    btn_limpiar = ft.ElevatedButton(text ="Limpiar",icon="clear",color="white", bgcolor=ft.colors.PURPLE_300, on_click=reload)
     page.add(dp_selection,txt_field,row,txt_field_valores_ordenados)
-    page.add(btn_ordenar)
+    page.add(ft.Row([btn_limpiar,btn_ordenar]))
 
 
 

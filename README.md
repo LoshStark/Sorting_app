@@ -1,9 +1,28 @@
 # A sorting_app Flet app
+Requisitos:
+flet==0.22.*
+python 3.12*
 
-An example of a minimal Flet app.
 
-To run the app:
+Para poder ejecutar esta aplicacion desde el entorno de programador se debe preparar un entorno virtual mediante las siguientes instrucciones:
 
 ```
-flet run [app_directory]
+python -m venv .venv
+```
+
+Se debe activar el entorno virtual:
+
+```
+.venv\Scripts\activate
+```
+
+Se instala Flet mediante  la paqueteria de Python(PIP)
+```
+pip install flet
+```
+
+Para ejecutar la aplicacion en modo programador, debe ejecutar lo siguiente:
+
+```
+flet run
 ```
