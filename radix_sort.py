@@ -33,10 +33,16 @@ def radix_sort(arr):
     # Hacemos counting sort para cada dígito. En lugar de pasar el número del dígito,
     # pasamos exp que es 10^i donde i es el número del dígito actual
     exp = 1
-    while max1 // exp > 0:
+    try:
+     while max1 // exp > 0:
         print(f"\nProcesando dígitos en exp={exp}")
         counting_sort(arr, exp)
         exp *= 10
+    except:
+        print("Radix sort solo soporta tipo de dato numerico")
+    finally:
+        print("El arreglo no se ordenará")
+
 
     return arr
 
@@ -47,6 +53,7 @@ def main(arr):
     for i in range(len(elementos)):
         if elementos[i].isdigit():
            elementos[i] = int(elementos[i])
+        
            
     res =  radix_sort(elementos)
     sorted_elements = [str(x) for x in res]

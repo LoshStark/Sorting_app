@@ -8,7 +8,6 @@ import merge_sort as merge
 import radix_sort as radix
 import heap_sort as heap
 import os
-import os
 import platform
 import subprocess
 
