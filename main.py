@@ -29,6 +29,7 @@ def main(page: ft.Page):
     def reload(e):
       txt_field_valores_ordenados.value =""
       txt_field.value =""
+      pick_files_button.disabled = False
       txt_field.read_only = False
       selected_files.value =""  
       dp_selection.value=""
@@ -60,31 +61,35 @@ def main(page: ft.Page):
               page.update()
 
           elif dp_selection.value =="Shellsort":
-               print ("Se ha seleccionado Insertion Sort")
+               print ("Se ha seleccionado Shell Sort")
                values = txt_field.value
                sorted_values = shell.main(values)
                txt_field_valores_ordenados.value = sorted_values
                page.update()
 
           elif dp_selection.value =="Quicksort":
+              print ("Se ha seleccionado Quick Sort")
               values = txt_field.value
               sorted_values = quick.main(values)
               txt_field_valores_ordenados.value = sorted_values
               page.update()
 
           elif dp_selection.value == "Merge Sort":
+               print ("Se ha seleccionado Merge Sort")
                values = txt_field.value
                sorted_values = merge.main(values)
                txt_field_valores_ordenados.value = sorted_values
                page.update()
 
           elif dp_selection.value == "Radix Sort":
+               print ("Se ha seleccionado Radix Sort")
                values = txt_field.value
                sorted_values = radix.main(values)
                txt_field_valores_ordenados.value = sorted_values
                page.update()
 
           elif dp_selection.value == "Heap Sort":
+               print ("Se ha seleccionado Heap Sort")
                values = txt_field.value
                sorted_values = heap.main(values)
                txt_field_valores_ordenados.value = sorted_values
