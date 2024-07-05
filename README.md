@@ -4,13 +4,15 @@ flet==0.22.*
 python 3.12*
 
 
-Para poder ejecutar esta aplicacion desde el entorno de programador se debe preparar un entorno virtual mediante las siguientes instrucciones:
+Para poder ejecutar esta aplicacion desde el entorno de programador se debe preparar un entorno virtual para evitar descargar dependencias y tener problemas en la mezcla, esto se hace mediante las siguientes instrucciones:
+
+1. Se establece un entorno virtual mediante venv
 
 ```
 python -m venv .venv
 ```
 
-Se debe activar el entorno virtual:
+2. Se debe activar el entorno virtual:
 
 ```
 .venv\Scripts\activate

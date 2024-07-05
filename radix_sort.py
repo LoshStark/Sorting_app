@@ -40,8 +40,7 @@ def radix_sort(arr):
         exp *= 10
     except:
         print("Radix sort solo soporta tipo de dato numerico")
-    finally:
-        print("El arreglo no se ordenará")
+
 
 
     return arr
