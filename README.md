@@ -56,7 +56,7 @@ Windows
 ```
 
 
-Mac
+Linux / Mac
 
 ```
 source .venv/bin/activate
@@ -80,4 +80,4 @@ flet run --web --port puerto_de_su_preferencia
 ```
 
 Puede acceder a la documentación mas detallada mediante el enlace: 
-[text](https://flet.dev/docs/)
+[Documentación - Flet](https://flet.dev/docs/)
