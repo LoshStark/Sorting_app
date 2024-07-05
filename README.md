@@ -2,6 +2,8 @@
 Requisitos:
 flet==0.22.*
 
+.venv - Obligatorio para ejecutar
+
 python 3.12*
 
 Puede instalar python mediante el cmd (Windows)
@@ -80,4 +82,4 @@ flet run --web --port puerto_de_su_preferencia
 ```
 
 Puede acceder a la documentación mas detallada mediante el enlace: 
-[Documentación - Flet](https://flet.dev/docs/)
+[Documentación - Fletgit](https://flet.dev/docs/)
